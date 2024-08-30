@@ -1,0 +1,46 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+import BaseLayout from "@/layouts/BaseLayout.astro";
+
+import List from "@/components/Article/List.astro";
+
+type Props = CollectionEntry<"article">;
+---
+
+<BaseLayout title="かきくけこ">
+  <head>
+    <meta charset="utf-8" />
+    <link href="/favicon.svg" rel="icon" type="image/svg+xml" />
+    <meta content="width=device-width" name="viewport" />
+    <meta content={Astro.generator} name="generator" />
+    <title>あ</title>
+  </head>
+  <body>
+    <header>
+      <h1>Articles</h1>
+    </header>
+    <nav>
+      <ul>
+        <li>
+          <a href="/">Home</a>
+        </li>
+        <li>
+          <a href="/blog">Blog</a>
+        </li>
+        <li>
+          <a href="/about">About</a>
+        </li>
+      </ul>
+    </nav>
+    <main>
+      <List />
+    </main>
+    <aside>
+      <p>I am an aside</p>
+    </aside>
+    <footer>
+      <p>footer</p>
+    </footer>
+  </body>
+</BaseLayout>

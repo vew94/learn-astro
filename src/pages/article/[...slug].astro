@@ -1,0 +1,62 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+import BaseLayout from "@/layouts/BaseLayout.astro";
+
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("article");
+  return posts.map((post) => ({
+    params: {
+      slug: post.slug,
+    },
+    props: post,
+  }));
+}
+
+type Props = CollectionEntry<"article">;
+
+const post = Astro.props;
+const { title } = post.data;
+const { Content } = await post.render();
+---
+
+<BaseLayout title="さしすせそ">
+  <head>
+    <meta charset="utf-8" />
+    <link href="/favicon.svg" rel="icon" type="image/svg+xml" />
+    <meta content="width=device-width" name="viewport" />
+    <meta content={Astro.generator} name="generator" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <header>
+      <h1>{title}fffff</h1>
+    </header>
+    <nav>
+      <ul>
+        <li>
+          <a href="/">Home</a>
+        </li>
+        <li>
+          <a href="/blog">Blog</a>
+        </li>
+        <li>
+          <a href="/about">About</a>
+        </li>
+      </ul>
+    </nav>
+    <main>
+      <article>
+        <Content />
+      </article>
+    </main>
+    <aside>
+      <p>I am an aside</p>
+    </aside>
+    <footer>
+      <p>footer</p>
+    </footer>
+  </body>
+</BaseLayout>

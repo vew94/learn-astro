@@ -1,4 +1,9 @@
-# learn-astro
+---
+title: "ESLint"
+author: "vew94"
+created: 2024-05-11
+tags: ["ESLint"]
+---
 
 ## 💻 Environment
 
@@ -42,11 +47,7 @@ Fix locale settings. This template defines `ja`.
   - [eslint-plugin-astro](https://ota-meshi.github.io/eslint-plugin-astro/)
   - [eslint-plugin-jsx-a11y](https://github.com/jsx-eslint/eslint-plugin-jsx-a11y)
   - [eslint-plugin-perfectionist](https://eslint-plugin-perfectionist.azat.io)
-- [Lighthouse](https://github.com/GoogleChrome/lighthouse)
 - [Pagefind](https://pagefind.app)
-- [markuplint](https://markuplint.dev)
-- [Stylelint](https://stylelint.io)
-  - [stylelint-config-standard](https://github.com/stylelint/stylelint-config-standard)
 
 ## 📘 Tips
 

@@ -1,0 +1,44 @@
+{
+  "name": "learn-astro",
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "astro": "astro",
+    "build": "astro build",
+    "postbuild": "pagefind --site dist && cp -r ./dist/pagefind/ ./public/pagefind/",
+    "dev": "astro dev --open",
+    "format": "eslint --cache --fix ./src/**/*.{astro,ts}",
+    "lint:html": "markuplint --locale ja \"**/*.html\"",
+    "prestart": "pnpm build",
+    "start": "pnpm dev",
+    "prepreview": "pnpm build",
+    "preview": "astro preview",
+    "lighthouse": "lighthouse http://localhost:4321 --output-path \"./logs/lighthouse.html\" --view"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.6.0",
+    "@astrojs/mdx": "^3.0.0",
+    "@astrojs/prism": "^3.1.0",
+    "@astrojs/sitemap": "^3.1.4",
+    "astro": "^4.8.2",
+    "pagefind": "^1.1.0",
+    "typescript": "^5.4.5"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.2.0",
+    "@markuplint/astro-parser": "^4.6.1",
+    "@markuplint/ml-config": "^4.6.1",
+    "@stylistic/eslint-plugin": "^2.1.0",
+    "@types/node": "^20.12.11",
+    "@typescript-eslint/parser": "^7.8.0",
+    "eslint": "^8.57.0",
+    "eslint-plugin-astro": "^1.1.2",
+    "eslint-plugin-jsx-a11y": "^6.8.0",
+    "eslint-plugin-perfectionist": "^2.10.0",
+    "lighthouse": "^12.0.0",
+    "markuplint": "^4.8.0",
+    "stylelint": "^16.5.0",
+    "stylelint-config-standard": "^36.0.0",
+    "typescript-eslint": "^7.8.0"
+  }
+}

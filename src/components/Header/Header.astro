@@ -1,0 +1,33 @@
+---
+import SearchIcon from "@/components/SearchIcon/SearchIcon.astro";
+
+import { SITE } from "@/config";
+---
+
+<header>
+  <div>
+    <span>{SITE.NAME}</span>
+  </div>
+  <nav>
+    <ul>
+      <li><SearchIcon /></li>
+      <li>
+        <a href="/">Home</a>
+      </li>
+      <li>
+        <a href="/article">Article</a>
+      </li>
+    </ul>
+  </nav>
+</header>
+<style>
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  li {
+    display: inline;
+  }
+</style>
